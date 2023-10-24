@@ -16,6 +16,7 @@ namespace PKNK_CNPM.Forms
     public partial class frmThemKhachHang : Form
     {
         private readonly KhachHangService benhNhanService = new KhachHangService();
+        private readonly NhanVienService nhanVienService = new NhanVienService();
         private bool isEdit = false;
         private BenhNhan khachHang;
         public frmThemKhachHang()
@@ -62,7 +63,6 @@ namespace PKNK_CNPM.Forms
                     cbMauKhoDong.Checked = khachHang.MauKhoDong.Value;
                 if (khachHang.ThieuNangTriTue != null)
                     cbThieuNang.Checked = khachHang.ThieuNangTriTue.Value;
-                txtMaNV.Text = khachHang.MaNV;
                 dtpNgaySinh.Value = khachHang.NgaySinh.Value;
                 // Select item trong combobox
                 if (khachHang.GioiTinh == true)
@@ -75,11 +75,35 @@ namespace PKNK_CNPM.Forms
                 txtMaKH.Enabled = false;
             }
         }
+
+       
         //
         private void frmThemKhachHang_Load(object sender, EventArgs e)
         {
             loadValue();
+            populateNhanVienCombobox();
         }
+
+        private void populateNhanVienCombobox()
+        {
+            List<NhanVien> list = nhanVienService.GetAll();
+            cbNhanVien.DataSource = list;
+            cbNhanVien.DisplayMember = "TenNhanVien";
+            cbNhanVien.ValueMember = "MaNhanVien";
+        }
+
+        private void loadComboBox()
+        {
+            foreach (var item in cbNhanVien.Items)
+            {
+                if (((NhanVien)item).MaNhanVien == khachHang.MaNV)
+                {
+                    cbNhanVien.SelectedItem = item;
+                    break;
+                }
+            }
+        }
+
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -92,26 +116,28 @@ namespace PKNK_CNPM.Forms
                     throw new Exception("Tên nhân viên quá 255 kí tự!");
                 if (!CheckValidService.IsVietnamesePhoneNumber(txtSDT.Text))
                     throw new Exception("Số điện thoại không hợp lệ!");
-
+                NhanVien selectedNhanVien = (NhanVien)cbNhanVien.SelectedItem;
                 BenhNhan value = new BenhNhan()
                 {
                     TenBN = txtTenKH.Text,
                     SDT = txtSDT.Text,
                     GioiTinh = rbNam.Checked == true ? true : false,
                     NgayTao = DateTime.Now,
-                    MaNV = txtMaNV.Text,
                     NgaySinh = (DateTime)dtpNgaySinh.Value,
                     DiaChi = txtDiaChi.Text,
                     GhiChu = rtbLyDo.Text,
-                    //MaTrangThai = khachHang.MaTrangThai == "" ? "TT001" : khachHang.MaTrangThai,
                     DuongHuyet = cbDuongHuyet.Checked,
                     HuyetApMach = cbDuongHuyet.Checked,
                     MauKhoDong = cbDuongHuyet.Checked,
                     ThieuNangTriTue = cbDuongHuyet.Checked,
+                    MaNV = selectedNhanVien.MaNhanVien,
                 };
+              
+                
 
                 if (isEdit)
                 {
+                    value.MaBN = int.Parse(txtMaKH.Text);
                     benhNhanService.Update(value);
                     MessageBox.Show("Sửa khách hàng thành công!");
                 }
