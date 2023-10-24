@@ -289,9 +289,7 @@ D:\workspace\CS\PKNK_Winform\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.FormCust
 D:\workspace\CS\PKNK_Winform\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.FormsSetting.frmDanhSachNV.resources
 D:\workspace\CS\PKNK_Winform\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.FormsSetting.frmThemNhanVien.resources
 D:\workspace\CS\PKNK_Winform\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.Forms.frmDanhSachThuoc.resources
-D:\workspace\CS\PKNK_Winform\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.Forms.frmDonThuoc.resources
 D:\workspace\CS\PKNK_Winform\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.Forms.frmHoaDonXuatNhap.resources
-D:\workspace\CS\PKNK_Winform\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.Forms.frmTaoThuocMoi.resources
 D:\workspace\CS\PKNK_Winform\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.Forms.frmThemKhachHang.resources
 D:\workspace\CS\PKNK_Winform\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.Item.TTThuocItem.resources
 D:\workspace\CS\PKNK_Winform\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.Item.TTThuThuatItem.resources
@@ -319,3 +317,4 @@ C:\Users\admin\source\c_sharp\PKNK_CNPM\PKNK_CNPM\quanlyphongkhamnhakhoa\obj\Deb
 C:\Users\admin\source\c_sharp\PKNK_CNPM\PKNK_CNPM\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.Forms.frmHoaDon2.resources
 C:\Users\admin\source\c_sharp\PKNK_CNPM\PKNK_CNPM\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.Forms.ThemHoaDonXuatNhap.resources
 D:\workspace\CS\PKNK_CNPM\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.Forms.frmThongTinChung.resources
+D:\workspace\CS\PKNK_Winform\quanlyphongkhamnhakhoa\obj\Debug\PKNK_CNPM.Forms.frmThongTinChung.resources
